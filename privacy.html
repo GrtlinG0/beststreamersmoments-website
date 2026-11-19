@@ -85,6 +85,14 @@
     nothing for us to collect.
   </p>
   <p>
+    One exception is worth naming: the page at <code>/tiktok/</code> is the OAuth
+    redirect target used when connecting a TikTok account. A small script on that
+    page reads the one-time authorization code out of the page's own address and
+    displays it so you can paste it into the application on your computer. The
+    code is not transmitted anywhere by this website, not stored and not logged;
+    the page makes no network requests of its own.
+  </p>
+  <p>
     The site is hosted on GitHub Pages. As the hosting provider, GitHub processes
     technical request data (such as IP address and user agent) in order to serve
     the pages. That processing is governed by the
