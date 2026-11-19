@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BestStreamersMoments Clipper</title>
+<meta name="description" content="A self-hosted desktop tool that watches live Twitch chat, cuts the moments it reacts to, and turns them into captioned vertical clips you approve before anything is published.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c5cff'/><path d='M38 30v40l30-20z' fill='white'/></svg>">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">▶</span> BestStreamersMoments</a>
+    <nav class="site">
+      <a href="#how">How it works</a>
+      <a href="#platforms">Platforms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">Self-hosted clipping tool</span>
+    <h1>The chat knows when something happened.<br>Clipper is listening.</h1>
+    <p class="lede">
+      BestStreamersMoments Clipper watches live Twitch chat, spots the moments it
+      explodes, and cuts them into captioned vertical clips — ready for Shorts,
+      Reels and TikTok. Everything runs on your own machine, and nothing leaves
+      it until you say so.
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#how">See how it works</a>
+      <a class="btn ghost" href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="sub">
+      One operator, one machine, no cloud service in the middle.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">📈</div>
+        <h3>Chat-spike detection</h3>
+        <p>
+          Message rate is measured against a rolling baseline, with bots and
+          repeated spam filtered out. When the rate multiplies, that's a moment.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">⏪</div>
+        <h3>Always-on buffer</h3>
+        <p>
+          A rolling recording buffer means the seconds <em>before</em> the reaction
+          are already on disk. The punchline is never missed by a few seconds.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">🗣️</div>
+        <h3>Word-level captions</h3>
+        <p>
+          Audio is transcribed locally and burned in word by word, in several
+          caption styles, with optional profanity masking.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">📱</div>
+        <h3>Vertical layouts</h3>
+        <p>
+          Seven 1080×1920 layouts — blurred background, webcam cut-in, chat panel,
+          reaction split and more — rendered with hardware encoding.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">🎛️</div>
+        <h3>Local dashboard</h3>
+        <p>
+          A token-protected dashboard on your own loopback address: review clips,
+          re-cut them, rewrite titles, approve or reject.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">🔒</div>
+        <h3>Approval before publishing</h3>
+        <p>
+          Public platforms are gated. A clip cannot reach YouTube, TikTok or
+          Instagram until you explicitly approve that clip.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">From a live stream to a clip waiting for your review.</p>
+    <ol class="steps">
+      <li>
+        <h3>Watch</h3>
+        <p>
+          Clipper joins the public chat of the channels you choose, read-only and
+          anonymously, and records the live stream into a rolling buffer.
+        </p>
+      </li>
+      <li>
+        <h3>Detect</h3>
+        <p>
+          Message rate, reaction keywords and emote bursts are scored against the
+          channel's own baseline. A real spike triggers a cut.
+        </p>
+      </li>
+      <li>
+        <h3>Cut and transcribe</h3>
+        <p>
+          The moment is cut from the buffer with lead-in and lead-out, then
+          transcribed locally — audio never leaves your computer.
+        </p>
+      </li>
+      <li>
+        <h3>Render</h3>
+        <p>
+          A vertical clip is produced with captions, an optional hook intro, zoom
+          and chat overlays, queued so one render runs at a time.
+        </p>
+      </li>
+      <li>
+        <h3>Review and approve</h3>
+        <p>
+          The clip appears in your dashboard as <em>awaiting approval</em>. Nothing
+          is uploaded to a public platform before you approve that specific clip.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap">
+    <h2>Platforms</h2>
+    <p class="sub">
+      Each integration uses the platform's official API and your own account. The
+      tool follows each platform's rules rather than working around them.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">▶</div>
+        <h3>YouTube Shorts</h3>
+        <p>
+          Uploads through the YouTube Data API to a channel you verify in advance.
+          Unverified API projects may only upload as private.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">♪</div>
+        <h3>TikTok</h3>
+        <p>
+          Content Posting API in Inbox Upload mode: the clip lands in your drafts
+          and you finish the caption and publish it in the TikTok app yourself.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">◎</div>
+        <h3>Instagram Reels</h3>
+        <p>
+          Optional, through the Instagram Graph API with a Professional account
+          and your own access token.
+        </p>
+      </div>
+      <div class="card">
+        <div class="ico">📤</div>
+        <h3>Local delivery</h3>
+        <p>
+          Or skip platforms entirely: a QR code to your phone, a synced folder, or
+          a webhook you point wherever you like.
+        </p>
+      </div>
+    </div>
+    <p style="margin-top:28px">
+      <span class="pills">
+        <span class="pill">Runs locally</span>
+        <span class="pill">No account required to watch Twitch</span>
+        <span class="pill">No analytics</span>
+        <span class="pill">Approval gate by default</span>
+      </span>
+    </p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About this project</h2>
+    <p class="sub">
+      BestStreamersMoments Clipper is a personal, self-hosted project, not a
+      hosted service. There is no sign-up, no user account and no server that
+      receives your clips.
+    </p>
+    <div class="note">
+      <strong>What this site is for.</strong>
+      These pages describe the tool and host its
+      <a href="privacy.html">Privacy Policy</a> and
+      <a href="terms.html">Terms of Service</a>, which platform developer programs
+      require. The site itself has no cookies, no analytics and no tracking.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 BestStreamersMoments Clipper</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://github.com/GrtlinG0/beststreamersmoments-website/issues">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
